@@ -197,6 +197,173 @@
           }
         }
       }
+    },
+    "/api/maintenancelogs/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Add a new maintenance log",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "vehicleId": {
+                  "type": "string",
+                  "example": "PEGAR_ID_DEL_VEHICULO_AQUI"
+                },
+                "serviceType": {
+                  "type": "string",
+                  "example": "Oil Change"
+                },
+                "partsUsed": {
+                  "type": "array",
+                  "example": [
+                    "Motul 8100 Eco-lite 5W-30",
+                    "OEM Filter"
+                  ],
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "notes": {
+                  "type": "string",
+                  "example": "Regular 5k mile service"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/maintenancelogs/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Update a maintenance log",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "vehicleId": {
+                  "type": "string",
+                  "example": "PEGAR_ID_DEL_VEHICULO_AQUI"
+                },
+                "serviceType": {
+                  "type": "string",
+                  "example": "Paint Correction"
+                },
+                "partsUsed": {
+                  "type": "array",
+                  "example": [
+                    "Compound",
+                    "Polish",
+                    "Ceramic Coating"
+                  ],
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "notes": {
+                  "type": "string",
+                  "example": "Full body correction"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
     }
   }
 }
