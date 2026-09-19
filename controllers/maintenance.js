@@ -26,7 +26,7 @@ exports.createLog = async (req, res) => {
         description: 'Add a new maintenance log',
         required: true,
         schema: {
-          vehicleId: "PEGAR_ID_DEL_VEHICULO_AQUI",
+          vehicleId: "Enter_ID",
           serviceType: "Oil Change",
           partsUsed: ["Motul 8100 Eco-lite 5W-30", "OEM Filter"],
           notes: "Regular 5k mile service"
