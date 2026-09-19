@@ -52,7 +52,7 @@ exports.updateLog = async (req, res) => {
         description: 'Update a maintenance log',
         required: true,
         schema: {
-          vehicleId: "PEGAR_ID_DEL_VEHICULO_AQUI",
+          vehicleId: "Enter_ID",
           serviceType: "Paint Correction",
           partsUsed: ["Compound", "Polish", "Ceramic Coating"],
           notes: "Full body correction"
