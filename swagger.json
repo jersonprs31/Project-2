@@ -5,11 +5,11 @@
     "description": "API to manage vehicles and maintenance logs",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "garage-tracker-api.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
-    "https"
+    "https",
+    "http"
   ],
   "paths": {
     "/api/vehicles/": {
