@@ -223,7 +223,7 @@
               "properties": {
                 "vehicleId": {
                   "type": "string",
-                  "example": "PEGAR_ID_DEL_VEHICULO_AQUI"
+                  "example": "Enter_ID"
                 },
                 "serviceType": {
                   "type": "string",
@@ -302,7 +302,7 @@
               "properties": {
                 "vehicleId": {
                   "type": "string",
-                  "example": "PEGAR_ID_DEL_VEHICULO_AQUI"
+                  "example": "Enter_ID"
                 },
                 "serviceType": {
                   "type": "string",
