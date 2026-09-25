@@ -65,7 +65,7 @@ app.get('/github/callback', passport.authenticate('github', {
 );
 
 app.get('/', (req, res) => {
-  res.send(req.session.user !== undefined ? `Logged in as ${req.session.user.displayName}` : "Logged Out");
+  res.send(req.session.user !== undefined ? `Logged in as ${req.session.user.username}` : "Logged Out");
 });
 
 app.use('/api/vehicles', vehicleRoutes);
