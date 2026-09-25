@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const vehicleController = require('../controllers/vehicles');
 const { body } = require('express-validator');
+const { isAuthenticated } = require('../middleware/authenticate');
 
-// Reglas de validación requeridas por la rúbrica
 const vehicleValidationRules = [
   body('make').notEmpty().withMessage('Make is required'),
   body('model').notEmpty().withMessage('Model is required'),
@@ -13,8 +13,8 @@ const vehicleValidationRules = [
 
 router.get('/', vehicleController.getAllVehicles);
 router.get('/:id', vehicleController.getVehicle);
-router.post('/', vehicleValidationRules, vehicleController.createVehicle);
-router.put('/:id', vehicleValidationRules, vehicleController.updateVehicle);
-router.delete('/:id', vehicleController.deleteVehicle);
+router.post('/', isAuthenticated, vehicleValidationRules, vehicleController.createVehicle);
+router.put('/:id', isAuthenticated, vehicleValidationRules, vehicleController.updateVehicle);
+router.delete('/:id', isAuthenticated, vehicleController.deleteVehicle);
 
 module.exports = router;
